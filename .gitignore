@@ -1,2 +1,20 @@
+# Dependencias
 node_modules/
+
+# Builds y paquetes
+dist/
 *.zip
+
+# Variables de entorno
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.sw?

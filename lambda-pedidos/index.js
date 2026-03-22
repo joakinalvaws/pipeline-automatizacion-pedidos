@@ -1,6 +1,6 @@
 import { google } from "googleapis";
 
-const SHEET_ID = "1P_7OKjwGlUIDnI-n92Zyh17XgdE2839UaqXB30790GY";
+const SHEET_ID = process.env.GOOGLE_SHEET_ID;
 
 export const handler = async (event) => {
   const headers = {
@@ -43,7 +43,7 @@ export const handler = async (event) => {
       requestBody: { values: [fila] },
     });
 
-    await fetch("https://n8n.srv1484800.hstgr.cloud/webhook-test/pedidos", {
+    await fetch(process.env.N8N_WEBHOOK_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

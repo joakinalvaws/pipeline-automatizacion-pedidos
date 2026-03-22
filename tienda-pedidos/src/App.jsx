@@ -34,7 +34,7 @@ export default function App() {
 
   const enviarPedido = async () => {
     const pedido = { ...form, carrito, total, fecha: new Date().toISOString() }
-    const response = await fetch("https://fazycucl7sdygfzkzpix2kckf40iezah.lambda-url.us-east-1.on.aws/", {
+    const response = await fetch(import.meta.env.VITE_API_URL, {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify(pedido)
